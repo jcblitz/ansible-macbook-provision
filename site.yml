@@ -18,6 +18,16 @@
       - rbenv
       - git-flow
       - maven
+      - docker
+  - name: install media items
+    homebrew_cask:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - spotify
+      - spotify-notifications
+    tags:
+      - media
   - name: install homebrew cask items
     homebrew_cask:
       name: "{{ item }}"
@@ -29,3 +39,8 @@
       - google-chrome
       - slack
       - controlplane
+      - intellij-idea
+  - name: install oh-my-zsh
+    shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    tags:
+      - cli
