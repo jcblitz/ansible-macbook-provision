@@ -19,6 +19,7 @@
       - git-flow
       - maven
       - docker
+      - docker-machine
   - name: install media items
     homebrew_cask:
       name: "{{ item }}"
@@ -40,7 +41,16 @@
       - slack
       - controlplane
       - intellij-idea
+      - skype-for-business
+      - skype
+      - skitch
+      - tor
+      - virtualbox
   - name: install oh-my-zsh
     shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    tags:
+      - cli
+  - name: rbenv plugins
+    shell: git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
     tags:
       - cli
