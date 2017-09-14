@@ -16,6 +16,7 @@
     with_items:
       - nodejs
       - rbenv
+      - git
       - git-flow
       - maven
       - docker
